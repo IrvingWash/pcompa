@@ -1,0 +1,267 @@
+// Workspace: Target Program
+
+//
+// String added via add_build_string() from /Users/irvingwash/apps/metaprogram/jails_diagnostics.jai:45.
+//
+JAILS_DIAGNOSTICS_BUILD :: true;
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("characters");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("run");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("keyCode");
+    (.*)(cast(*Selector) (data + 24)) = sel_registerName("modifierFlags");
+    (.*)(cast(*Selector) (data + 32)) = sel_registerName("isARepeat");
+    (.*)(cast(*Selector) (data + 40)) = sel_registerName("sharedApplication");
+    (.*)(cast(*Selector) (data + 48)) = sel_registerName("mainWindow");
+    (.*)(cast(*Selector) (data + 56)) = sel_registerName("sendEvent:");
+    (.*)(cast(*Selector) (data + 64)) = sel_registerName("updateWindows");
+    (.*)(cast(*Selector) (data + 72)) = sel_registerName("activateIgnoringOtherApps:");
+    (.*)(cast(*Selector) (data + 80)) = sel_registerName("setActivationPolicy:");
+    (.*)(cast(*Selector) (data + 88)) = sel_registerName("finishLaunching");
+    (.*)(cast(*Selector) (data + 96)) = sel_registerName("setMainMenu:");
+    (.*)(cast(*Selector) (data + 104)) = sel_registerName("nextEventMatchingMask:untilDate:inMode:dequeue:");
+    (.*)(cast(*Selector) (data + 112)) = sel_registerName("blueColor");
+    (.*)(cast(*Selector) (data + 120)) = sel_registerName("update");
+    (.*)(cast(*Selector) (data + 128)) = sel_registerName("display");
+    (.*)(cast(*Selector) (data + 136)) = sel_registerName("contentView");
+    (.*)(cast(*Selector) (data + 144)) = sel_registerName("makeKeyAndOrderFront:");
+    (.*)(cast(*Selector) (data + 152)) = sel_registerName("setReleasedWhenClosed:");
+    (.*)(cast(*Selector) (data + 160)) = sel_registerName("setBackgroundColor:");
+    (.*)(cast(*Selector) (data + 168)) = sel_registerName("setStyleMask:");
+    (.*)(cast(*Selector) (data + 176)) = sel_registerName("styleMask");
+    (.*)(cast(*Selector) (data + 184)) = sel_registerName("setDelegate:");
+    (.*)(cast(*Selector) (data + 192)) = sel_registerName("setTitle:");
+    (.*)(cast(*Selector) (data + 200)) = sel_registerName("setContentView:");
+    (.*)(cast(*Selector) (data + 208)) = sel_registerName("initWithContentRect:styleMask:backing:defer:");
+    (.*)(cast(*Selector) (data + 216)) = sel_registerName("initWithContentRect:styleMask:backing:defer:screen:");
+    (.*)(cast(*Selector) (data + 224)) = sel_registerName("makeFirstResponder:");
+    (.*)(cast(*Selector) (data + 232)) = sel_registerName("addSubView:");
+    (.*)(cast(*Selector) (data + 240)) = sel_registerName("setWantsLayer:");
+    (.*)(cast(*Selector) (data + 248)) = sel_registerName("flushBuffer");
+    (.*)(cast(*Selector) (data + 256)) = sel_registerName("setView:");
+    (.*)(cast(*Selector) (data + 264)) = sel_registerName("initWithFormat:shareContext:");
+    (.*)(cast(*Selector) (data + 272)) = sel_registerName("makeCurrentContext");
+    (.*)(cast(*Selector) (data + 280)) = sel_registerName("initWithAttributes:");
+    (.*)(cast(*Selector) (data + 288)) = sel_registerName("type");
+    (.*)(cast(*Selector) (data + 296)) = sel_registerName("mouseLocation");
+    (.*)(cast(*Selector) (data + 304)) = sel_registerName("generalPasteboard");
+    (.*)(cast(*Selector) (data + 312)) = sel_registerName("setString:forType:");
+    (.*)(cast(*Selector) (data + 320)) = sel_registerName("types");
+    (.*)(cast(*Selector) (data + 328)) = sel_registerName("stringForType:");
+    (.*)(cast(*Selector) (data + 336)) = sel_registerName("clearContents");
+    (.*)(cast(*Selector) (data + 344)) = sel_registerName("keyRepeatDelay");
+    (.*)(cast(*Selector) (data + 352)) = sel_registerName("keyRepeatInterval");
+    (.*)(cast(*Selector) (data + 360)) = sel_registerName("pressedMouseButtons");
+    (.*)(cast(*Selector) (data + 368)) = sel_registerName("deltaX");
+    (.*)(cast(*Selector) (data + 376)) = sel_registerName("deltaY");
+    (.*)(cast(*Selector) (data + 384)) = sel_registerName("deltaZ");
+    (.*)(cast(*Selector) (data + 392)) = sel_registerName("associatedEventsMask");
+    (.*)(cast(*Selector) (data + 400)) = sel_registerName("buttonNumber");
+    (.*)(cast(*Selector) (data + 408)) = sel_registerName("clickCount");
+    (.*)(cast(*Selector) (data + 416)) = sel_registerName("charactersIgnoringModifiers");
+    (.*)(cast(*Selector) (data + 424)) = sel_registerName("mouseLocationOutsideOfEventStream");
+    (.*)(cast(*Selector) (data + 432)) = sel_registerName("keyWindow");
+    (.*)(cast(*Selector) (data + 440)) = sel_registerName("frame");
+    (.*)(cast(*Selector) (data + 448)) = sel_registerName("setFrame:");
+    (.*)(cast(*Selector) (data + 456)) = sel_registerName("setFrame:display:");
+    (.*)(cast(*Selector) (data + 464)) = sel_registerName("center");
+    (.*)(cast(*Selector) (data + 472)) = sel_registerName("convertRectToBacking:");
+    (.*)(cast(*Selector) (data + 480)) = sel_registerName("convertRectFromBacking:");
+    (.*)(cast(*Selector) (data + 488)) = sel_registerName("convertPointToBacking:");
+    (.*)(cast(*Selector) (data + 496)) = sel_registerName("convertPointFromBacking:");
+    (.*)(cast(*Selector) (data + 504)) = sel_registerName("backingScaleFactor");
+    (.*)(cast(*Selector) (data + 512)) = sel_registerName("setWantsBestResolutionOpenGLSurface:");
+    (.*)(cast(*Selector) (data + 520)) = sel_registerName("mainScreen");
+    (.*)(cast(*Selector) (data + 528)) = sel_registerName("hide");
+    (.*)(cast(*Selector) (data + 536)) = sel_registerName("unhide");
+    (.*)(cast(*Selector) (data + 544)) = sel_registerName("set");
+    (.*)(cast(*Selector) (data + 552)) = sel_registerName("arrowCursor");
+    (.*)(cast(*Selector) (data + 560)) = sel_registerName("IBeamCursor");
+    (.*)(cast(*Selector) (data + 568)) = sel_registerName("pointingHandCursor");
+    (.*)(cast(*Selector) (data + 576)) = sel_registerName("openHandCursor");
+    (.*)(cast(*Selector) (data + 584)) = sel_registerName("closedHandCursor");
+    (.*)(cast(*Selector) (data + 592)) = sel_registerName("operationNotAllowedCursor");
+    (.*)(cast(*Selector) (data + 600)) = sel_registerName("resizeLeftRightCursor");
+    (.*)(cast(*Selector) (data + 608)) = sel_registerName("resizeUpDownCursor");
+    (.*)(cast(*Selector) (data + 616)) = sel_registerName(":windowResizeNorthEastSouthWestCursor");
+    (.*)(cast(*Selector) (data + 624)) = sel_registerName("isInFullScreenMode");
+    (.*)(cast(*Selector) (data + 632)) = sel_registerName("enterFullScreenMode:withOptions:");
+    (.*)(cast(*Selector) (data + 640)) = sel_registerName("exitFullScreenModeWithOptions:");
+    (.*)(cast(*Selector) (data + 648)) = sel_registerName("toggleFullScreen:");
+    (.*)(cast(*Selector) (data + 656)) = sel_registerName("setCollectionBehavior:");
+    (.*)(cast(*Selector) (data + 664)) = sel_registerName("setContentSize:");
+    (.*)(cast(*Selector) (data + 672)) = sel_registerName("setFrameOrigin:");
+    (.*)(cast(*Selector) (data + 680)) = sel_registerName("level");
+    (.*)(cast(*Selector) (data + 688)) = sel_registerName("setLevel:");
+    (.*)(cast(*Selector) (data + 696)) = sel_registerName("setValues:forParameter:");
+    (.*)(cast(*Selector) (data + 704)) = sel_registerName("getValues:forAttribute:forVirtualScreen:");
+    (.*)(cast(*Selector) (data + 712)) = sel_registerName("currentContext");
+    (.*)(cast(*Selector) (data + 720)) = sel_registerName("view");
+    (.*)(cast(*Selector) (data + 728)) = sel_registerName("URL");
+    (.*)(cast(*Selector) (data + 736)) = sel_registerName("savePanel");
+    (.*)(cast(*Selector) (data + 744)) = sel_registerName("openPanel");
+    (.*)(cast(*Selector) (data + 752)) = sel_registerName("runModal");
+    (.*)(cast(*Selector) (data + 760)) = sel_registerName("setShowsTagField:");
+    (.*)(cast(*Selector) (data + 768)) = sel_registerName("showsTagField");
+    (.*)(cast(*Selector) (data + 776)) = sel_registerName("setCanSelectHiddenExtension:");
+    (.*)(cast(*Selector) (data + 784)) = sel_registerName("canSelectHiddenExtension");
+    (.*)(cast(*Selector) (data + 792)) = sel_registerName("setDirectoryURL:");
+    (.*)(cast(*Selector) (data + 800)) = sel_registerName("directoryURL");
+    (.*)(cast(*Selector) (data + 808)) = sel_registerName("setNameFieldStringValue:");
+    (.*)(cast(*Selector) (data + 816)) = sel_registerName("nameFieldStringValue");
+    (.*)(cast(*Selector) (data + 824)) = sel_registerName("allowedFileTypes");
+    (.*)(cast(*Selector) (data + 832)) = sel_registerName("setAllowedFileTypes:");
+    (.*)(cast(*Selector) (data + 840)) = sel_registerName("allowsOtherFileTypes");
+    (.*)(cast(*Selector) (data + 848)) = sel_registerName("setAllowsOtherFileTypes:");
+    (.*)(cast(*Selector) (data + 856)) = sel_registerName("alertStyle");
+    (.*)(cast(*Selector) (data + 864)) = sel_registerName("setAlertStyle:");
+    (.*)(cast(*Selector) (data + 872)) = sel_registerName("informativeText");
+    (.*)(cast(*Selector) (data + 880)) = sel_registerName("setInformativeText:");
+    (.*)(cast(*Selector) (data + 888)) = sel_registerName("messageText");
+    (.*)(cast(*Selector) (data + 896)) = sel_registerName("setMessageText:");
+    (.*)(cast(*Selector) (data + 904)) = sel_registerName("layout");
+    (.*)(cast(*Selector) (data + 912)) = sel_registerName("accessoryView");
+    (.*)(cast(*Selector) (data + 920)) = sel_registerName("setAccessoryView:");
+    (.*)(cast(*Selector) (data + 928)) = sel_registerName("showsHelp");
+    (.*)(cast(*Selector) (data + 936)) = sel_registerName("setShowsHelp:");
+    (.*)(cast(*Selector) (data + 944)) = sel_registerName("addButtonWithTitle:");
+    (.*)(cast(*Selector) (data + 952)) = sel_registerName("writeObjects:");
+    (.*)(cast(*Selector) (data + 960)) = sel_registerName("pasteboardItems");
+    (.*)(cast(*Selector) (data + 968)) = sel_registerName("readObjectsForClasses:options:");
+    (.*)(cast(*Selector) (data + 976)) = sel_registerName("size");
+    (.*)(cast(*Selector) (data + 984)) = sel_registerName("setSize:");
+    (.*)(cast(*Selector) (data + 992)) = sel_registerName("initWithBitmapDataPlanes:pixelsWide:pixelsHigh:bitsPerSample:samplesPerPixel:hasAlpha:isPlanar:colorSpaceName:bytesPerRow:bitsPerPixel:");
+    (.*)(cast(*Selector) (data + 1000)) = sel_registerName("bitmapData");
+    (.*)(cast(*Selector) (data + 1008)) = sel_registerName("initWithSize:");
+    (.*)(cast(*Selector) (data + 1016)) = sel_registerName("addRepresentation:");
+    (.*)(cast(*Selector) (data + 1024)) = sel_registerName("presentationOptions");
+    (.*)(cast(*Selector) (data + 1032)) = sel_registerName("setPresentationOptions:");
+    (.*)(cast(*Selector) (data + 1040)) = sel_registerName("addItem:");
+    (.*)(cast(*Selector) (data + 1048)) = sel_registerName("initWithTitle:action:keyEquivalent:");
+    (.*)(cast(*Selector) (data + 1056)) = sel_registerName("setSubmenu:");
+    (.*)(cast(*Selector) (data + 1064)) = sel_registerName("keyEquivalentModifierMask");
+    (.*)(cast(*Selector) (data + 1072)) = sel_registerName("setKeyEquivalentModifierMask:");
+    (.*)(cast(*Selector) (data + 1080)) = sel_registerName("terminate:");
+    (.*)(cast(*Selector) (data + 1088)) = sel_registerName("addItemWithTitle:action:keyEquivalent:");
+    (.*)(cast(*Selector) (data + 1096)) = sel_registerName("setAppleMenu:");
+    (.*)(cast(*Selector) (data + 1104)) = sel_registerName("doNothing:");
+    (.*)(cast(*Selector) (data + 1112)) = sel_registerName("stop:");
+    (.*)(cast(*Selector) (data + 1120)) = sel_registerName("layer");
+    (.*)(cast(*Selector) (data + 1128)) = sel_registerName("performClose:");
+    (.*)(cast(*Selector) (data + 1136)) = sel_registerName("close");
+    (.*)(cast(*Selector) (data + 1144)) = sel_registerName("buttonWithTitle:target:action:");
+    (.*)(cast(*Selector) (data + 1152)) = sel_registerName("requestUserAttention:");
+    (.*)(cast(*Selector) (data + 1160)) = sel_registerName("mouse:inRect:");
+    (.*)(cast(*Selector) (data + 1168)) = sel_registerName("convertRectFromScreen:");
+    (.*)(cast(*Selector) (data + 1176)) = sel_registerName("convertPointFromScreen:");
+    (.*)(cast(*Selector) (data + 1184)) = sel_registerName("convertPoint:fromView:");
+    (.*)(cast(*Selector) (data + 1192)) = sel_registerName("bounds");
+    (.*)(cast(*Selector) (data + 1200)) = sel_registerName("orderOut:");
+    (.*)(cast(*Selector) (data + 1208)) = sel_registerName("orderFront:");
+    (.*)(cast(*Selector) (data + 1216)) = sel_registerName("drawRect:");
+    (.*)(cast(*Selector) (data + 1224)) = sel_registerName("registerForDraggedTypes:");
+    (.*)(cast(*Selector) (data + 1232)) = sel_registerName("draggingSourceOperationMask");
+    (.*)(cast(*Selector) (data + 1240)) = sel_registerName("draggingPasteboard");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("swapBuffers");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("setGlContext:");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("glContext");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("drain");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("showPools");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("resourcePath");
+    (.*)(cast(*Selector) (data + 24)) = sel_registerName("mainBundle");
+    (.*)(cast(*Selector) (data + 32)) = sel_registerName("distantPast");
+    (.*)(cast(*Selector) (data + 40)) = sel_registerName("distantFuture");
+    (.*)(cast(*Selector) (data + 48)) = sel_registerName("initWithBytes:length:encoding:");
+    (.*)(cast(*Selector) (data + 56)) = sel_registerName("UTF8String");
+    (.*)(cast(*Selector) (data + 64)) = sel_registerName("dataUsingEncoding:allowLossyConversion:");
+    (.*)(cast(*Selector) (data + 72)) = sel_registerName("stringByExpandingTildeInPath");
+    (.*)(cast(*Selector) (data + 80)) = sel_registerName("scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:");
+    (.*)(cast(*Selector) (data + 88)) = sel_registerName("currentRunLoop");
+    (.*)(cast(*Selector) (data + 96)) = sel_registerName("run");
+    (.*)(cast(*Selector) (data + 104)) = sel_registerName("operatingSystem");
+    (.*)(cast(*Selector) (data + 112)) = sel_registerName("operatingSystemName");
+    (.*)(cast(*Selector) (data + 120)) = sel_registerName("isOperatingSystemAtLeastVersion:");
+    (.*)(cast(*Selector) (data + 128)) = sel_registerName("disableSuddenTermination");
+    (.*)(cast(*Selector) (data + 136)) = sel_registerName("enableSuddenTermination");
+    (.*)(cast(*Selector) (data + 144)) = sel_registerName("disableAutomaticTermination:");
+    (.*)(cast(*Selector) (data + 152)) = sel_registerName("enableAutomaticTermination:");
+    (.*)(cast(*Selector) (data + 160)) = sel_registerName("processInfo");
+    (.*)(cast(*Selector) (data + 168)) = sel_registerName("environment");
+    (.*)(cast(*Selector) (data + 176)) = sel_registerName("arguments");
+    (.*)(cast(*Selector) (data + 184)) = sel_registerName("hostName");
+    (.*)(cast(*Selector) (data + 192)) = sel_registerName("processName");
+    (.*)(cast(*Selector) (data + 200)) = sel_registerName("setProcessName:");
+    (.*)(cast(*Selector) (data + 208)) = sel_registerName("processIdentifier");
+    (.*)(cast(*Selector) (data + 216)) = sel_registerName("globallyUniqueString");
+    (.*)(cast(*Selector) (data + 224)) = sel_registerName("operatingSystemVersionString");
+    (.*)(cast(*Selector) (data + 232)) = sel_registerName("operatingSystemVersion");
+    (.*)(cast(*Selector) (data + 240)) = sel_registerName("processorCount");
+    (.*)(cast(*Selector) (data + 248)) = sel_registerName("activeProcessorCount");
+    (.*)(cast(*Selector) (data + 256)) = sel_registerName("physicalMemory");
+    (.*)(cast(*Selector) (data + 264)) = sel_registerName("systemUptime");
+    (.*)(cast(*Selector) (data + 272)) = sel_registerName("automaticTerminationSupportEnabled");
+    (.*)(cast(*Selector) (data + 280)) = sel_registerName("setAutomaticTerminationSupportEnabled:");
+    (.*)(cast(*Selector) (data + 288)) = sel_registerName("detachNewThreadSelector:toTarget:withObject:");
+    (.*)(cast(*Selector) (data + 296)) = sel_registerName("isMultiThreaded");
+    (.*)(cast(*Selector) (data + 304)) = sel_registerName("object");
+    (.*)(cast(*Selector) (data + 312)) = sel_registerName("defaultCenter");
+    (.*)(cast(*Selector) (data + 320)) = sel_registerName("addObserver:selector:name:object:");
+    (.*)(cast(*Selector) (data + 328)) = sel_registerName("URLWithString:");
+    (.*)(cast(*Selector) (data + 336)) = sel_registerName("fileURLWithPath:");
+    (.*)(cast(*Selector) (data + 344)) = sel_registerName("fileURLWithPath:isDirectory:");
+    (.*)(cast(*Selector) (data + 352)) = sel_registerName("path");
+    (.*)(cast(*Selector) (data + 360)) = sel_registerName("URLByDeletingLastPathComponent");
+    (.*)(cast(*Selector) (data + 368)) = sel_registerName("hasDirectoryPath");
+    (.*)(cast(*Selector) (data + 376)) = sel_registerName("URLByAppendingPathComponent:");
+    (.*)(cast(*Selector) (data + 384)) = sel_registerName("lastPathComponent");
+    (.*)(cast(*Selector) (data + 392)) = sel_registerName("bytes");
+    (.*)(cast(*Selector) (data + 400)) = sel_registerName("length");
+    (.*)(cast(*Selector) (data + 408)) = sel_registerName("arrayWithObject:");
+    (.*)(cast(*Selector) (data + 416)) = sel_registerName("arrayWithObjects:count:");
+    (.*)(cast(*Selector) (data + 424)) = sel_registerName("containsObject:");
+    (.*)(cast(*Selector) (data + 432)) = sel_registerName("objectAtIndex:");
+    (.*)(cast(*Selector) (data + 440)) = sel_registerName("count");
+    (.*)(cast(*Selector) (data + 448)) = sel_registerName("defaultManager");
+    (.*)(cast(*Selector) (data + 456)) = sel_registerName("URLForDirectory:inDomain:appropriateForURL:create:error:");
+    (.*)(cast(*Selector) (data + 464)) = sel_registerName("currentHost");
+    (.*)(cast(*Selector) (data + 472)) = sel_registerName("localizedName");
+    (.*)(cast(*Selector) (data + 480)) = sel_registerName("localizedDescription");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("alloc");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("objc:copy");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("autorelease");
+    (.*)(cast(*Selector) (data + 24)) = sel_registerName("release");
+    (.*)(cast(*Selector) (data + 32)) = sel_registerName("retain");
+    (.*)(cast(*Selector) (data + 40)) = sel_registerName("class");
+    (.*)(cast(*Selector) (data + 48)) = sel_registerName("superclass");
+    (.*)(cast(*Selector) (data + 56)) = sel_registerName("isEqual:");
+    (.*)(cast(*Selector) (data + 64)) = sel_registerName("init");
+    (.*)(cast(*Selector) (data + 72)) = sel_registerName("addItem:");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:379.
+//
+_nswindowcontroller_data: [72] u8; // size of NSWindowController minus size of parent class
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:373.
+//
+_nsresponder_data: [24] u8; // size of NSResponder minus size of parent class
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:898.
+//
+_nsviewcontroller_data: [88] u8; // size of NSViewController minus size of parent class
