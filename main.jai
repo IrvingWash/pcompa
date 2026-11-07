@@ -131,7 +131,12 @@ render :: () {
         if state.images.count > 0 { // Path
             path_width := Simp.prepare_text(
                 state.font,
-                state.images[state.current_image_id].path,
+                tprint(
+                    "% (%x%)",
+                    state.images[state.current_image_id].path,
+                    state.images[state.current_image_id].texture.width,
+                    state.images[state.current_image_id].texture.height,
+                ),
             );
 
             Simp.set_shader_for_color(enable_blend = true);
