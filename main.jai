@@ -53,7 +53,7 @@ main :: () {
 }
 
 render :: () {
-    Simp.clear_render_target(.3, .3, .3, 1);
+    Simp.clear_render_target(.2, .2, .2, 1);
 
     Simp.immediate_begin();
 
@@ -105,23 +105,27 @@ render :: () {
     if state.overlay_mode || state.images.count == 0 {
         { // Help
             HEIGHT :: 50;
-            Simp.set_shader_for_color(enable_blend = true);
-            Simp.immediate_quad(
-                0,
-                cast(float) state.window_height - HEIGHT,
-                xx state.window_width,
-                cast(float) state.window_height,
-                { 0.3, 0.3, 0.3, 0.5 },
-            );
+
             text_width := Simp.prepare_text(
                 state.font,
                 "LMB - toggle overlay, MMB - move image, RMB - reset image, SCROLL - zoom, BACKSPACE - remove image",
             );
-            Simp.draw_prepared_text(
-                state.font,
-                state.window_width / 2 -text_width / 2,
-                state.window_height - (HEIGHT - state.font.character_height),
-            );
+
+            if text_width < state.window_width {
+                Simp.set_shader_for_color(enable_blend = true);
+                Simp.immediate_quad(
+                    0,
+                    cast(float) state.window_height - HEIGHT,
+                    xx state.window_width,
+                    cast(float) state.window_height,
+                    { 0.3, 0.3, 0.3, 0.5 },
+                );
+                Simp.draw_prepared_text(
+                    state.font,
+                    state.window_width / 2 -text_width / 2,
+                    state.window_height - (HEIGHT - state.font.character_height),
+                );
+            }
         }
 
         if state.images.count > 0 { // Path
