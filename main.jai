@@ -23,14 +23,21 @@ State :: struct {
     quit: bool;
     font: *Simp.Dynamic_Font;
 
-    images: [..]Simp.Texture;
+    images: [..]Image;
     current_image_id: int;
     largest_image_width := -FLOAT32_INFINITY;
     largest_image_height := -FLOAT32_INFINITY;
 
     zoom: float = 1;
-    moving_mode: bool;
     offset: Vector2;
+
+    moving_mode: bool;
+    overlay_mode: bool;
+}
+
+Image :: struct {
+    path: string;
+    texture: Simp.Texture;
 }
 
 state: State;
@@ -52,15 +59,15 @@ render :: () {
     if state.images.count > 0 {
         current_image := state.images[state.current_image_id];
 
-        Simp.set_shader_for_images(*current_image);
+        Simp.set_shader_for_images(*current_image.texture);
 
         scale := min(
             cast(float, state.window_width) / state.largest_image_width,
             cast(float, state.window_height) / state.largest_image_height
         ) * state.zoom;
 
-        image_new_width := current_image.width * scale;
-        image_new_height := current_image.height * scale;
+        image_new_width := current_image.texture.width * scale;
+        image_new_height := current_image.texture.height * scale;
 
         padding_y := (state.window_height - image_new_height) / 2;
         padding_x := (state.window_width - image_new_width) / 2;
@@ -73,7 +80,46 @@ render :: () {
             { 1, 1, 1, 1 },
         );
 
-        Simp.draw_text(state.font, 10, 10, tprint("%/%", state.current_image_id + 1, state.images.count));
+        page_text := tprint("%/%", state.current_image_id + 1, state.images.count);
+        page_text_width := Simp.prepare_text(state.font, page_text);
+
+        center := cast(float) state.window_width / 2 - page_text_width / 2;
+
+        Simp.set_shader_for_color(enable_blend = true);
+        Simp.immediate_quad(
+            center - 10,
+            5,
+            cast(float) page_text_width + center + 10,
+            cast(float) 20 + 10,
+            { 0.3, 0.3, 0.3, 0.3 },
+        );
+
+        Simp.draw_prepared_text(
+            state.font,
+            xx center,
+            10,
+        );
+    }
+
+    if state.overlay_mode || state.images.count == 0 {
+        HEIGHT :: 50;
+        Simp.set_shader_for_color(enable_blend = true);
+        Simp.immediate_quad(
+            0,
+            cast(float) state.window_height - HEIGHT,
+            xx state.window_width,
+            cast(float) state.window_height,
+            { 0.3, 0.3, 0.3, 0.5 },
+        );
+        text_width := Simp.prepare_text(
+            state.font,
+            "LMB - toggle overlay, MMB - move image, RMB - reset image, SCROLL - zoom, BACKSPACE - remove image",
+        );
+        Simp.draw_prepared_text(
+            state.font,
+            state.window_width / 2 -text_width / 2,
+            state.window_height - (HEIGHT - state.font.character_height),
+        );
     }
 
     Simp.immediate_flush();
@@ -85,14 +131,29 @@ add_image :: (path: string) {
     texture: Simp.Texture;
     Simp.texture_load_from_file(*texture, path, srgb = false);
 
-    array_add(*state.images, texture);
+    array_add(*state.images, Image.{ copy_string(path), texture });
 
     state.current_image_id = state.images.count - 1;
 
     for image: state.images {
-        state.largest_image_width = max(cast(float) image.width, state.largest_image_width);
-        state.largest_image_height = max(cast(float) image.height, state.largest_image_height);
+        state.largest_image_width = max(cast(float) image.texture.width, state.largest_image_width);
+        state.largest_image_height = max(cast(float) image.texture.height, state.largest_image_height);
     }
+}
+
+remove_image :: () {
+    if state.images.count == 0 {
+        return;
+    }
+
+    current_image := state.images[state.current_image_id];
+
+    Simp.texture_destroy(*current_image.texture);
+    free(current_image.path);
+
+    array_ordered_remove_by_index(*state.images, state.current_image_id);
+
+    state.current_image_id = max(state.current_image_id - 1, 0);;
 }
 
 process_input :: () {
@@ -138,9 +199,21 @@ process_input :: () {
                         if event.key_pressed && state.current_image_id > 0 {
                             state.current_image_id -= 1;
                         }
+                    case .F1;
+                        if event.key_pressed {
+                            state.overlay_mode = !state.overlay_mode;
+                        }
+                    case .BACKSPACE;
+                        if event.key_pressed {
+                            remove_image();
+                        }
                     case .MOUSE_BUTTON_LEFT;
                         #if OS == .MACOS {
                             state.moving_mode = xx event.key_pressed;
+                        } else {
+                            if event.key_pressed {
+                                state.overlay_mode = !state.overlay_mode;
+                            }
                         }
                     case .MOUSE_BUTTON_MIDDLE;
                         state.moving_mode = xx event.key_pressed;
