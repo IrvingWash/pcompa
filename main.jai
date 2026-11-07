@@ -3,6 +3,7 @@
 Simp :: #import "Simp";
 Input :: #import "Input";
 #import "File";
+#import "Math";
 
 #if OS == .WINDOWS {
     #import "Windows";
@@ -24,6 +25,8 @@ State :: struct {
     images: [..]Simp.Texture;
     current_image: int;
     zoom: float = 1;
+    moving_mode: bool;
+    offset: Vector2;
 }
 
 state: State;
@@ -61,10 +64,10 @@ render :: () {
         padding_x := (state.window_width - image_new_width) / 2;
 
         Simp.immediate_quad(
-            padding_x,
-            padding_y,
-            xx (image_new_width) + padding_x,
-            xx (image_new_height) + padding_y,
+            padding_x + state.offset.x,
+            padding_y - state.offset.y,
+            xx (image_new_width) + padding_x + state.offset.x,
+            xx (image_new_height) + padding_y - state.offset.y,
             { 1, 1, 1, 1 },
         );
 
@@ -128,12 +131,26 @@ process_input :: () {
                         if event.key_pressed && state.current_image > 0 {
                             state.current_image -= 1;
                         }
+                    case .MOUSE_BUTTON_LEFT;
+                        #if OS == .MACOS {
+                            state.moving_mode = xx event.key_pressed;
+                        }
+                    case .MOUSE_BUTTON_MIDDLE;
+                        state.moving_mode = xx event.key_pressed;
+                    case .MOUSE_BUTTON_RIGHT;
+                        state.offset = {};
+                        state.zoom = 1;
                 }
             case .MOUSE_WHEEL;
                 SENSITIVITY :: 0.01;
                 state.zoom += event.wheel_delta * SENSITIVITY;
                 state.zoom = max(state.zoom, 1);
         }
+    }
+
+    if state.moving_mode {
+        state.offset.x += Input.mouse_delta_x;
+        state.offset.y += Input.mouse_delta_y;
     }
 }
 
