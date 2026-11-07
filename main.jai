@@ -23,7 +23,7 @@ State :: struct {
     font: *Simp.Dynamic_Font;
     images: [..]Simp.Texture;
     current_image: int;
-    zoom: float;
+    zoom: float = 1;
 }
 
 state: State;
@@ -52,7 +52,7 @@ render :: () {
         scale := min(
             cast(float, state.window_width) / current_image.width,
             cast(float, state.window_height) / current_image.height
-        );
+        ) * state.zoom;
 
         image_new_width := current_image.width * scale;
         image_new_height := current_image.height * scale;

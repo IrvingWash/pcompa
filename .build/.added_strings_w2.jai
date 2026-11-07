@@ -1,32 +1,6 @@
 // Workspace: Target Program
 
 //
-// String added via add_build_string() from /Users/irvingwash/apps/metaprogram/jails_diagnostics.jai:45.
-//
-JAILS_DIAGNOSTICS_BUILD :: true;
-
-//
-// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
-//
-    (.*)(cast(*Selector) (data + 0)) = sel_registerName("swapBuffers");
-    (.*)(cast(*Selector) (data + 8)) = sel_registerName("setGlContext:");
-    (.*)(cast(*Selector) (data + 16)) = sel_registerName("glContext");
-
-//
-// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
-//
-    (.*)(cast(*Selector) (data + 0)) = sel_registerName("alloc");
-    (.*)(cast(*Selector) (data + 8)) = sel_registerName("objc:copy");
-    (.*)(cast(*Selector) (data + 16)) = sel_registerName("autorelease");
-    (.*)(cast(*Selector) (data + 24)) = sel_registerName("release");
-    (.*)(cast(*Selector) (data + 32)) = sel_registerName("retain");
-    (.*)(cast(*Selector) (data + 40)) = sel_registerName("class");
-    (.*)(cast(*Selector) (data + 48)) = sel_registerName("superclass");
-    (.*)(cast(*Selector) (data + 56)) = sel_registerName("isEqual:");
-    (.*)(cast(*Selector) (data + 64)) = sel_registerName("init");
-    (.*)(cast(*Selector) (data + 72)) = sel_registerName("addItem:");
-
-//
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
 //
     (.*)(cast(*Selector) (data + 0)) = sel_registerName("drain");
@@ -90,6 +64,20 @@ JAILS_DIAGNOSTICS_BUILD :: true;
     (.*)(cast(*Selector) (data + 464)) = sel_registerName("currentHost");
     (.*)(cast(*Selector) (data + 472)) = sel_registerName("localizedName");
     (.*)(cast(*Selector) (data + 480)) = sel_registerName("localizedDescription");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("alloc");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("objc:copy");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("autorelease");
+    (.*)(cast(*Selector) (data + 24)) = sel_registerName("release");
+    (.*)(cast(*Selector) (data + 32)) = sel_registerName("retain");
+    (.*)(cast(*Selector) (data + 40)) = sel_registerName("class");
+    (.*)(cast(*Selector) (data + 48)) = sel_registerName("superclass");
+    (.*)(cast(*Selector) (data + 56)) = sel_registerName("isEqual:");
+    (.*)(cast(*Selector) (data + 64)) = sel_registerName("init");
+    (.*)(cast(*Selector) (data + 72)) = sel_registerName("addItem:");
 
 //
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
@@ -250,6 +238,13 @@ JAILS_DIAGNOSTICS_BUILD :: true;
     (.*)(cast(*Selector) (data + 1224)) = sel_registerName("registerForDraggedTypes:");
     (.*)(cast(*Selector) (data + 1232)) = sel_registerName("draggingSourceOperationMask");
     (.*)(cast(*Selector) (data + 1240)) = sel_registerName("draggingPasteboard");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("swapBuffers");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("setGlContext:");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("glContext");
 
 //
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:373.
