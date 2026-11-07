@@ -22,8 +22,12 @@ State :: struct {
     window_height: int;
     quit: bool;
     font: *Simp.Dynamic_Font;
+
     images: [..]Simp.Texture;
-    current_image: int;
+    current_image_id: int;
+    largest_image_width := -FLOAT32_INFINITY;
+    largest_image_height := -FLOAT32_INFINITY;
+
     zoom: float = 1;
     moving_mode: bool;
     offset: Vector2;
@@ -46,15 +50,13 @@ render :: () {
     Simp.immediate_begin();
 
     if state.images.count > 0 {
-        current_image := state.images[state.current_image];
-
-        image_aspect := cast(float, current_image.width) / cast(float, current_image.height);
+        current_image := state.images[state.current_image_id];
 
         Simp.set_shader_for_images(*current_image);
 
         scale := min(
-            cast(float, state.window_width) / current_image.width,
-            cast(float, state.window_height) / current_image.height
+            cast(float, state.window_width) / state.largest_image_width,
+            cast(float, state.window_height) / state.largest_image_height
         ) * state.zoom;
 
         image_new_width := current_image.width * scale;
@@ -71,7 +73,7 @@ render :: () {
             { 1, 1, 1, 1 },
         );
 
-        Simp.draw_text(state.font, 10, 10, tprint("%/%", state.current_image + 1, state.images.count));
+        Simp.draw_text(state.font, 10, 10, tprint("%/%", state.current_image_id + 1, state.images.count));
     }
 
     Simp.immediate_flush();
@@ -85,7 +87,12 @@ add_image :: (path: string) {
 
     array_add(*state.images, texture);
 
-    state.current_image = state.images.count - 1;
+    state.current_image_id = state.images.count - 1;
+
+    for image: state.images {
+        state.largest_image_width = max(cast(float) image.width, state.largest_image_width);
+        state.largest_image_height = max(cast(float) image.height, state.largest_image_height);
+    }
 }
 
 process_input :: () {
@@ -124,12 +131,12 @@ process_input :: () {
             case .KEYBOARD;
                 if event.key_code == {
                     case .ARROW_RIGHT;
-                        if event.key_pressed && state.images.count - 1 > state.current_image {
-                            state.current_image += 1;
+                        if event.key_pressed && state.images.count - 1 > state.current_image_id {
+                            state.current_image_id += 1;
                         }
                     case .ARROW_LEFT;
-                        if event.key_pressed && state.current_image > 0 {
-                            state.current_image -= 1;
+                        if event.key_pressed && state.current_image_id > 0 {
+                            state.current_image_id -= 1;
                         }
                     case .MOUSE_BUTTON_LEFT;
                         #if OS == .MACOS {
