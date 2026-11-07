@@ -23,6 +23,7 @@ State :: struct {
     font: *Simp.Dynamic_Font;
     images: [..]Simp.Texture;
     current_image: int;
+    zoom: float;
 }
 
 state: State;
@@ -128,6 +129,10 @@ process_input :: () {
                             state.current_image -= 1;
                         }
                 }
+            case .MOUSE_WHEEL;
+                SENSITIVITY :: 0.01;
+                state.zoom += event.wheel_delta * SENSITIVITY;
+                state.zoom = max(state.zoom, 1);
         }
     }
 }
