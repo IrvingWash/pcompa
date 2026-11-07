@@ -48,6 +48,7 @@ main :: () {
     while !state.quit {
         process_input();
         render();
+        reset_temporary_storage();
     }
 }
 
@@ -88,38 +89,62 @@ render :: () {
         Simp.set_shader_for_color(enable_blend = true);
         Simp.immediate_quad(
             center - 10,
-            5,
+            40,
             cast(float) page_text_width + center + 10,
-            cast(float) 20 + 10,
+            cast(float) 50 + 20,
             { 0.3, 0.3, 0.3, 0.3 },
         );
 
         Simp.draw_prepared_text(
             state.font,
             xx center,
-            10,
+            50,
         );
     }
 
     if state.overlay_mode || state.images.count == 0 {
-        HEIGHT :: 50;
-        Simp.set_shader_for_color(enable_blend = true);
-        Simp.immediate_quad(
-            0,
-            cast(float) state.window_height - HEIGHT,
-            xx state.window_width,
-            cast(float) state.window_height,
-            { 0.3, 0.3, 0.3, 0.5 },
-        );
-        text_width := Simp.prepare_text(
-            state.font,
-            "LMB - toggle overlay, MMB - move image, RMB - reset image, SCROLL - zoom, BACKSPACE - remove image",
-        );
-        Simp.draw_prepared_text(
-            state.font,
-            state.window_width / 2 -text_width / 2,
-            state.window_height - (HEIGHT - state.font.character_height),
-        );
+        { // Help
+            HEIGHT :: 50;
+            Simp.set_shader_for_color(enable_blend = true);
+            Simp.immediate_quad(
+                0,
+                cast(float) state.window_height - HEIGHT,
+                xx state.window_width,
+                cast(float) state.window_height,
+                { 0.3, 0.3, 0.3, 0.5 },
+            );
+            text_width := Simp.prepare_text(
+                state.font,
+                "LMB - toggle overlay, MMB - move image, RMB - reset image, SCROLL - zoom, BACKSPACE - remove image",
+            );
+            Simp.draw_prepared_text(
+                state.font,
+                state.window_width / 2 -text_width / 2,
+                state.window_height - (HEIGHT - state.font.character_height),
+            );
+        }
+
+        if state.images.count > 0 { // Path
+            path_width := Simp.prepare_text(
+                state.font,
+                state.images[state.current_image_id].path,
+            );
+
+            Simp.set_shader_for_color(enable_blend = true);
+            Simp.immediate_quad(
+                0,
+                0,
+                cast(float) state.window_width,
+                cast(float) 10 + state.font.character_height + 10,
+                { 0.3, 0.3, 0.3, 0.5 },
+            );
+
+            Simp.draw_prepared_text(
+                state.font,
+                state.window_width / 2 - path_width / 2,
+                10,
+            );
+        }
     }
 
     Simp.immediate_flush();
