@@ -3,27 +3,6 @@
 //
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
 //
-    (.*)(cast(*Selector) (data + 0)) = sel_registerName("alloc");
-    (.*)(cast(*Selector) (data + 8)) = sel_registerName("objc:copy");
-    (.*)(cast(*Selector) (data + 16)) = sel_registerName("autorelease");
-    (.*)(cast(*Selector) (data + 24)) = sel_registerName("release");
-    (.*)(cast(*Selector) (data + 32)) = sel_registerName("retain");
-    (.*)(cast(*Selector) (data + 40)) = sel_registerName("class");
-    (.*)(cast(*Selector) (data + 48)) = sel_registerName("superclass");
-    (.*)(cast(*Selector) (data + 56)) = sel_registerName("isEqual:");
-    (.*)(cast(*Selector) (data + 64)) = sel_registerName("init");
-    (.*)(cast(*Selector) (data + 72)) = sel_registerName("addItem:");
-
-//
-// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
-//
-    (.*)(cast(*Selector) (data + 0)) = sel_registerName("swapBuffers");
-    (.*)(cast(*Selector) (data + 8)) = sel_registerName("setGlContext:");
-    (.*)(cast(*Selector) (data + 16)) = sel_registerName("glContext");
-
-//
-// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
-//
     (.*)(cast(*Selector) (data + 0)) = sel_registerName("characters");
     (.*)(cast(*Selector) (data + 8)) = sel_registerName("run");
     (.*)(cast(*Selector) (data + 16)) = sel_registerName("keyCode");
@@ -184,6 +163,20 @@
 //
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
 //
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("alloc");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("objc:copy");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("autorelease");
+    (.*)(cast(*Selector) (data + 24)) = sel_registerName("release");
+    (.*)(cast(*Selector) (data + 32)) = sel_registerName("retain");
+    (.*)(cast(*Selector) (data + 40)) = sel_registerName("class");
+    (.*)(cast(*Selector) (data + 48)) = sel_registerName("superclass");
+    (.*)(cast(*Selector) (data + 56)) = sel_registerName("isEqual:");
+    (.*)(cast(*Selector) (data + 64)) = sel_registerName("init");
+    (.*)(cast(*Selector) (data + 72)) = sel_registerName("addItem:");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
     (.*)(cast(*Selector) (data + 0)) = sel_registerName("drain");
     (.*)(cast(*Selector) (data + 8)) = sel_registerName("showPools");
     (.*)(cast(*Selector) (data + 16)) = sel_registerName("resourcePath");
@@ -247,6 +240,18 @@
     (.*)(cast(*Selector) (data + 480)) = sel_registerName("localizedDescription");
 
 //
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/module.jai:56.
+//
+    (.*)(cast(*Selector) (data + 0)) = sel_registerName("swapBuffers");
+    (.*)(cast(*Selector) (data + 8)) = sel_registerName("setGlContext:");
+    (.*)(cast(*Selector) (data + 16)) = sel_registerName("glContext");
+
+//
+// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:898.
+//
+_nsviewcontroller_data: [88] u8; // size of NSViewController minus size of parent class
+
+//
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:379.
 //
 _nswindowcontroller_data: [72] u8; // size of NSWindowController minus size of parent class
@@ -255,8 +260,3 @@ _nswindowcontroller_data: [72] u8; // size of NSWindowController minus size of p
 // #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:373.
 //
 _nsresponder_data: [24] u8; // size of NSResponder minus size of parent class
-
-//
-// #insert text. Generated from /Users/irvingwash/jai/modules/Objective_C/AppKit.jai:898.
-//
-_nsviewcontroller_data: [88] u8; // size of NSViewController minus size of parent class

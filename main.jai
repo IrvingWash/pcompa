@@ -41,7 +41,7 @@ main :: () {
 }
 
 render :: () {
-    Simp.clear_render_target(.15, .08, .08, 1);
+    Simp.clear_render_target(.3, .3, .3, 1);
 
     Simp.immediate_begin();
 
