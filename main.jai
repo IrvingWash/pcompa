@@ -6,7 +6,9 @@ Input :: #import "Input";
 #import "Math";
 
 #if OS == .WINDOWS {
-    #import "Windows";
+    Windows :: #import "Windows";
+    Windows_Resources :: #import "Windows_Resources";
+    #run Windows_Resources.disable_runtime_console();
 } else #if OS == .MACOS {
     #import "Objective_C";
     #import "Objective_C/AppKit";
@@ -281,8 +283,6 @@ init :: () {
     #if OS == .WINDOWS {
         Windows.DragAcceptFiles(state.window, cast(Windows.BOOL) true);
     } else #if OS == .MACOS {
-        #import "Objective_C";
-        #import "Objective_C/AppKit";
         types := NSArray(NSPasteboardType).arrayWithObject(NSPasteboardTypeFileURL);
         NSView.registerForDraggedTypes(state.window, types);
     }
