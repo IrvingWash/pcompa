@@ -9,3 +9,5 @@ Picture comparer
 - `RMB`         to reset panning and zooming
 - `LMB`         to show current image's path, size and controls help
 - `F2`          to disable fit mode
+
+![Showcase](pcompa.gif)
