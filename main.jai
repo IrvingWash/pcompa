@@ -33,8 +33,9 @@ State :: struct {
     zoom: float = 1;
     offset: Vector2;
 
-    moving_mode: bool;
+    moving_mode:  bool;
     overlay_mode: bool;
+    fit_mode:     bool = true;
 }
 
 Image :: struct {
@@ -69,8 +70,15 @@ render :: () {
             cast(float, state.window_height) / state.largest_image_height
         ) * state.zoom;
 
-        image_new_width := current_image.texture.width * scale;
-        image_new_height := current_image.texture.height * scale;
+        image_new_width:  float;
+        image_new_height: float;
+        if state.fit_mode {
+            image_new_width  = state.largest_image_width  * scale;
+            image_new_height = state.largest_image_height * scale;
+        } else {
+            image_new_width  = current_image.texture.width  * scale;
+            image_new_height = current_image.texture.height * scale;
+        }
 
         padding_y := (state.window_height - image_new_height) / 2;
         padding_x := (state.window_width - image_new_width) / 2;
@@ -104,13 +112,13 @@ render :: () {
         );
     }
 
-    if state.overlay_mode || state.images.count == 0 {
+    if state.overlay_mode {
         { // Help
             HEIGHT :: 50;
 
             text_width := Simp.prepare_text(
                 state.font,
-                "LMB - toggle overlay, MMB - move image, RMB - reset image, SCROLL - zoom, BACKSPACE - remove image",
+                "LMB - toggle overlay, MMB - move image, RMB - reset image, SCROLL - zoom, BACKSPACE - remove image, F2 - toggle fit mode",
             );
 
             if text_width < state.window_width {
@@ -171,10 +179,7 @@ add_image :: (path: string) {
 
     state.current_image_id = state.images.count - 1;
 
-    for image: state.images {
-        state.largest_image_width = max(cast(float) image.texture.width, state.largest_image_width);
-        state.largest_image_height = max(cast(float) image.texture.height, state.largest_image_height);
-    }
+    recalculate_largest_image_size();
 }
 
 remove_image :: () {
@@ -190,6 +195,15 @@ remove_image :: () {
     array_ordered_remove_by_index(*state.images, state.current_image_id);
 
     state.current_image_id = max(state.current_image_id - 1, 0);;
+
+    recalculate_largest_image_size();
+}
+
+recalculate_largest_image_size :: () {
+    for image: state.images {
+        state.largest_image_width = max(cast(float) image.texture.width, state.largest_image_width);
+        state.largest_image_height = max(cast(float) image.texture.height, state.largest_image_height);
+    }
 }
 
 process_input :: () {
@@ -238,6 +252,10 @@ process_input :: () {
                     case .F1;
                         if event.key_pressed {
                             state.overlay_mode = !state.overlay_mode;
+                        }
+                    case .F2;
+                        if event.key_pressed {
+                            state.fit_mode != state.fit_mode;
                         }
                     case .BACKSPACE;
                         if event.key_pressed {
